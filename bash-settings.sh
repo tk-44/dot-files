@@ -1,3 +1,11 @@
+#Append PATH
+function append_path {
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$1:$PATH" ;;
+    esac
+}
+
 #Add directories to PATH
 append_path "$HOME/bin"
 append_path "HOME/.local/bin"
